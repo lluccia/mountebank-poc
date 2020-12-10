@@ -1,0 +1,15 @@
+{
+    "protocol": "http",
+    "port": 4545,
+    "numberOfRequests": 0,
+    "recordRequests": false,
+    "requests": [],
+    "stubs": [{
+        "responses": [{
+            "proxy": {
+                "to": "https://pokeapi.co",
+                "predicateGenerators": [{ "matches": { "path": true } }]
+            }
+        }]
+    }]
+}

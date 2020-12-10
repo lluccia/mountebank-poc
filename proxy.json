@@ -2,7 +2,7 @@
     "protocol": "http",
     "port": 4545,
     "numberOfRequests": 0,
-    "recordRequests": false,
+    "recordRequests": true,
     "requests": [],
     "stubs": [{
         "responses": [{

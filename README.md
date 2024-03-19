@@ -10,8 +10,9 @@ Run mountebank with datadir parameter for recorded responses:
 
 ```sh
 mkdir datadir
+chmod 777 datadir # mountebank image runs with user 1001
 
-docker run --rm -p 2525:2525 -p 4545:4545 -v $PWD/datadir:/datadir andyrbell/mountebank:2.3.3 mb --datadir /datadir
+docker run --rm -p 2525:2525 -p 4545:4545 -v $PWD/datadir:/datadir bbyars/mountebank:2.9.1 --datadir /datadir
 ```
 
 Record imposter configuration

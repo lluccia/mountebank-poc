@@ -12,10 +12,10 @@ Run mountebank with datadir parameter for recorded responses:
 mkdir datadir
 chmod 777 datadir # mountebank image runs with user 1001
 
-docker run --rm -p 2525:2525 -p 4545:4545 -v $PWD/datadir:/datadir bbyars/mountebank:2.9.4 --datadir /datadir
+docker run --rm -p 2525:2525 -p 4545:4545 -v $PWD/datadir:/datadir bbyars/mountebank:2.9.4 --datadir /datadir --allowInjection true
 ```
 
-Record imposter configuration
+Create imposter:
 
 ```sh
 curl -i -X POST -H 'Content-Type: application/json' http://localhost:2525/imposters --data @proxy.json

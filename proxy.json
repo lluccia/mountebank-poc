@@ -5,11 +5,18 @@
     "recordRequests": true,
     "requests": [],
     "stubs": [{
-        "responses": [{
-            "proxy": {
-                "to": "https://pokeapi.co",
-                "predicateGenerators": [{ "matches": { "path": true } }]
+        "responses": [
+            {
+                "proxy": {
+                    "to": "https://pokeapi.co",
+                    "mode": "proxyOnce",
+                    "predicateGenerators": [{ "matches": { "path": true } }]
+                },
+                "behaviors": [
+                    { "decorate": "(config) => { config.response.body = JSON.stringify(config.response.body).replaceAll('https://pokeapi.co', 'http://localhost:4545'); }" },
+                    { "decorate": "(config) => { config.response.headers['X-Test'] = 'True'; }" }
+                ]
             }
-        }]
+        ]
     }]
 }
